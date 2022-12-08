@@ -1,0 +1,21 @@
+function createArrayOfRandNumbsNoRepeats(min, maxNotIncluded){ 
+    
+    let randomNumber = (min, maxNotIncluded) => Math.floor(Math.random() * (maxNotIncluded - min) ) + min;
+    let nums = [];
+    
+
+    for(let i = 0; i < maxNotIncluded; i++){
+       
+        let randNum;
+
+        do{
+
+            randNum = randomNumber(min, maxNotIncluded);
+
+        } while(nums.includes(randNum));
+
+        nums.push(randNum);
+    }
+    
+    return nums;
+}
